@@ -1,0 +1,20 @@
+server:
+  port: 9000
+#需要导入spring-boot-starter-security
+#为admin server 添加一个认证，当访问localhost:9000 会要求验证
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+spring:
+  application:
+    name: admin-service
+  security: #安全配置
+    user:
+      name: icil
+      password: icil4icil
+      
