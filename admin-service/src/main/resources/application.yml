@@ -15,6 +15,6 @@ spring:
     name: admin-service
   security: #安全配置
     user:
-      name: icil
-      password: icil4icil
+      name: ${ADMIN_USERNAME:root}
+      password: ${ADMIN_PASSWORD:root}
       
