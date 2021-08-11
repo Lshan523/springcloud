@@ -13,16 +13,16 @@ spring:
     basic:
      enabled: true
     user:
-      name: icil
-      password: icil4icil
+      name: ${EUREKA_USERNAME:root}
+      password: ${EUREKA_PASSWORD:root}
 eureka:
   client:
     service-url:
       #erueka server的地址，/eureka
-      defaultZone: http://icil:icil4icil@127.0.0.1:8761/eureka
+      defaultZone: ${EUREKA_DEFAULTZONE:http://root:root@127.0.0.1:8761/eureka}
     # 是否从eureka server注册，这里我们选择false
-    fetch-registry: false
+    fetch-registry: ${EUREKA_FETCH_REGISTRY:false}
     # 是否从eureka server 中拉取服务
-    register-with-eureka: false
+    register-with-eureka: ${EUREKA_REGISTER_WITH_EUREKA:false}
   server:
-    enable-self-preservation: false # 关闭自我保护模式（缺省为打开）
+    enable-self-preservation: ${EUREKA_ENABLE_SELF_PRESERVATION:false} # 关闭自我保护模式（缺省为打开）
